@@ -2,10 +2,6 @@
 
 graduation project
 
-## 시스템 구조
-![image](https://user-images.githubusercontent.com/63990390/162247520-49b39583-c0b5-4081-97f2-ccd2ce5e1346.jpg)
-
-
 ## UI
 
 ### 로그인
