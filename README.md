@@ -3,8 +3,8 @@
 graduation project
 
 ## 시스템 구조
-<img src="https://user-images.githubusercontent.com/63990390/162246291-c3f2b4bf-7acc-4d37-af71-85f7a1acfae9.png  width="200" height="400"/>
-![image](){: width="100" height="100"}
+![image](https://user-images.githubusercontent.com/63990390/162247520-49b39583-c0b5-4081-97f2-ccd2ce5e1346.jpg)
+
 
 ## UI
 
