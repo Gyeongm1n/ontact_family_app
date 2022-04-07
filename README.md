@@ -3,7 +3,7 @@
 graduation project
 
 ## 시스템 구조
-![image](https://user-images.githubusercontent.com/63990390/162246291-c3f2b4bf-7acc-4d37-af71-85f7a1acfae9.png)
+![image](https://user-images.githubusercontent.com/63990390/162246291-c3f2b4bf-7acc-4d37-af71-85f7a1acfae9.png){: width="100" height="100"}
 
 ## UI
 
