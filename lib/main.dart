@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ontact_family_app/components/DashboardPage.dart';
 import 'package:ontact_family_app/components/LoginScreen.dart';
 import 'package:ontact_family_app/components/RegisterScreen.dart';
 
@@ -16,6 +17,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/' : (context) => LoginScreen(),
         '/register' : (context) => RegisterScreen(),
+        '/pages' : (context) => DashboardPage(),
       },
       title: 'Ontact Family App',
       theme: ThemeData(

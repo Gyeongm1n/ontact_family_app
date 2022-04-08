@@ -12,12 +12,14 @@ class _LoginScreenState extends State<LoginScreen> {
   String userPassword = '';
   final _formKey = GlobalKey<FormState>();
 
-  void _tryValidation() {
+  void _tryValidation(BuildContext context) {
     final isValid = _formKey.currentState!.validate();
     if (isValid) {
       _formKey.currentState!.save();
     }
-    if (userId == 'test' && userPassword == 'test') {}
+    if (userId == 'test' && userPassword == 'test') {
+      Navigator.pushNamed(context, '/pages');
+    }
   }
 
   @override
@@ -142,7 +144,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       height: 40,
                       child: ElevatedButton(
                         onPressed: () {
-                          _tryValidation();
+                          _tryValidation(context);
                         },
                         style: ButtonStyle(),
                         child: Text(
@@ -158,13 +160,11 @@ class _LoginScreenState extends State<LoginScreen> {
                       height: 15,
                     ),
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         Text(
                           '아직 회원이 아닌가요?',
                           style: TextStyle(fontSize: 15, letterSpacing: 2.0),
-                        ),
-                        SizedBox(
-                          width: 20,
                         ),
                         TextButton(
                           style: TextButton.styleFrom(

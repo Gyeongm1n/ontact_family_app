@@ -191,13 +191,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       height: 15,
                     ),
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         Text(
                           '로그인 정보가 있으신가요?',
                           style: TextStyle(fontSize: 15, letterSpacing: 2.0),
-                        ),
-                        SizedBox(
-                          width: 20,
                         ),
                         TextButton(
                           style: TextButton.styleFrom(
