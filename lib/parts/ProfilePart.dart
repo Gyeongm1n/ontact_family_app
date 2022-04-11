@@ -12,18 +12,17 @@ class _ProfilePartState extends State<ProfilePart> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(20.0),
-      height: 150,
-      width: MediaQuery.of(context).size.width - 40,
-      margin: EdgeInsets.only(bottom: 10),
+      padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 15.0),
+      height: 130,
+      margin: EdgeInsets.only(bottom: 20, left: 5, right: 5, top: 10),
       decoration: BoxDecoration(
         boxShadow: [
           BoxShadow(
             blurStyle: BlurStyle.inner,
             color: Colors.grey.withOpacity(0.3),
-            spreadRadius: 0,
-            blurRadius: 5.0,
-            offset: Offset(0, 10),
+            spreadRadius: 5,
+            blurRadius: 7,
+            offset: Offset(0, 3),
           )
         ],
         color: Colors.white,

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:ontact_family_app/parts/HeartratePart.dart';
 import 'package:ontact_family_app/parts/ProfilePart.dart';
+import 'package:ontact_family_app/parts/StepPart.dart';
 
 // 구성구성원 한명의 정보를 나타내는 클래스
 class UserDashboard extends StatelessWidget {
@@ -12,7 +14,7 @@ class UserDashboard extends StatelessWidget {
         width: MediaQuery.of(context).size.width - 40,
         margin: EdgeInsets.symmetric(horizontal: 20.0),
         height: MediaQuery.of(context).size.height,
-        padding: EdgeInsets.only(top: 60),
+        padding: EdgeInsets.only(top: 50),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -21,22 +23,8 @@ class UserDashboard extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Container(
-                    width: ((MediaQuery.of(context).size.width - 40) / 2) - 5,
-                    margin: EdgeInsets.only(right: 5, bottom: 10),
-                    height: 130,
-                    decoration: BoxDecoration(
-                      //color: Colors.grey,
-                    ),
-                  ),
-                  Container(
-                    width: ((MediaQuery.of(context).size.width - 40) / 2) - 5,
-                    margin: EdgeInsets.only(left: 5, bottom: 10),
-                    height: 130,
-                    decoration: BoxDecoration(
-                      //color: Colors.grey,
-                    ),
-                  ),
+                  HeartratePart(),
+                  StepPart(),
                 ],
               ),
               Row(
