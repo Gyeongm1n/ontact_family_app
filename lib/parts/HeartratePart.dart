@@ -12,7 +12,7 @@ class _HeartratePartState extends State<HeartratePart> {
   Widget build(BuildContext context) {
     return Container(
         padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
-        width: ((MediaQuery.of(context).size.width - 40) / 2) - 10,
+        width: ((MediaQuery.of(context).size.width - 40) / 2) - 13,
         margin: EdgeInsets.only(right: 5, bottom: 10, left: 5),
         height: 120,
         decoration: BoxDecoration(
@@ -38,7 +38,7 @@ class _HeartratePartState extends State<HeartratePart> {
               ),
             ),
             Positioned(
-              top: 10,
+              top: 14,
               left: 0,
               right: 0,
               child: Divider(

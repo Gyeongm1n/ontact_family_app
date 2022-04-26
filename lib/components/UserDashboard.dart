@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:ontact_family_app/parts/CaloriesPart.dart';
+import 'package:ontact_family_app/parts/ExercisePart.dart';
 import 'package:ontact_family_app/parts/HeartratePart.dart';
 import 'package:ontact_family_app/parts/ProfilePart.dart';
+import 'package:ontact_family_app/parts/SleepPart.dart';
 import 'package:ontact_family_app/parts/StepPart.dart';
 
 // 구성구성원 한명의 정보를 나타내는 클래스
@@ -27,34 +30,20 @@ class UserDashboard extends StatelessWidget {
                   StepPart(),
                 ],
               ),
+              SizedBox(
+                height: 10,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Container(
-                    width: ((MediaQuery.of(context).size.width - 40) / 2) - 5,
-                    margin: EdgeInsets.only(right: 5, bottom: 10),
-                    height: 150,
-                    decoration: BoxDecoration(
-                      //color: Colors.grey,
-                    ),
-                  ),
-                  Container(
-                    width: ((MediaQuery.of(context).size.width - 40) / 2) - 5,
-                    margin: EdgeInsets.only(left: 5, bottom: 10),
-                    height: 150,
-                    decoration: BoxDecoration(
-                      //color: Colors.grey,
-                    ),
-                  ),
+                  CaloriesPart(),
+                  ExercisePart(),
                 ],
               ),
-              Container(
-                height: 200,
-                margin: EdgeInsets.only(bottom: 10),
-                decoration: BoxDecoration(
-                  //color: Colors.grey,
-                ),
+              SizedBox(
+                height: 10,
               ),
+              SleepPart(),
               Container(
                 height: 200,
                 margin: EdgeInsets.only(bottom: 10),

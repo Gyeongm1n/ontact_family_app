@@ -1,5 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:ontact_family_app/Charts/MyPainter.dart';
+import 'package:syncfusion_flutter_gauges/gauges.dart';
 
 class StepPart extends StatefulWidget {
   const StepPart({Key? key}) : super(key: key);
@@ -19,7 +20,7 @@ class _StepPartState extends State<StepPart> {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
-      width: ((MediaQuery.of(context).size.width - 40) / 2) - 10,
+      width: ((MediaQuery.of(context).size.width - 40) / 2) - 13,
       margin: EdgeInsets.only(right: 5, bottom: 10, left: 5),
       height: 120,
       decoration: BoxDecoration(
@@ -35,33 +36,66 @@ class _StepPartState extends State<StepPart> {
         color: Colors.white,
         borderRadius: BorderRadius.circular(20.0),
       ),
-      child: Stack(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Positioned(
-            top: 0,
-            child: Text(
-              '  걸음',
-              style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
+          Text(
+            ' 걸음수',
+            style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
+          ),
+          Divider(
+            thickness: 2,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(right: 5),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [Text(
+                ' 7312/10000걸음',
+                style: TextStyle(fontSize: 10,),
+              ),],
             ),
           ),
-          Positioned(
-            top: 10,
-            left: 0,
-            right: 0,
-            child: Divider(
-              thickness: 2,
+
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 5),
+            child: SfLinearGauge(
+              minimum: 0,
+              maximum: 10000,
+              axisTrackStyle: LinearAxisTrackStyle(thickness: 15),
+              barPointers: [LinearBarPointer(value: 7312, thickness: 15,)],
+              showTicks: false,
+              showLabels: false,
             ),
           ),
-          Positioned(
-            top: 40,
-            left: 0,
-            child: CustomPaint(
-              size: Size(150, 50),
-              painter: MyPainter(),
+          SizedBox(
+            height: 10,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(right: 5),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Text(
+                  '  2.13/4km',
+                  style: TextStyle(fontSize: 10,),
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 5),
+            child: SfLinearGauge(
+              minimum: 0,
+              maximum: 4,
+              axisTrackStyle: LinearAxisTrackStyle(thickness: 15),
+              barPointers: [LinearBarPointer(value: 2.13, thickness: 15,)],
+              showTicks: false,
+              showLabels: false,
             ),
           ),
         ],
-      ),
+      )
     );
   }
 }
