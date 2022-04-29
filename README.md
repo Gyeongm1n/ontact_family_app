@@ -13,6 +13,4 @@ graduation project
 ### 대시보드
 ![image](https://user-images.githubusercontent.com/63990390/165759174-3c3d1cde-1bab-4f1a-b793-78a160cdf23a.png)
 
-## 참고
-[notion](https://www.notion.so/4a577ebe8105403c8656a104118c1abd)
 
