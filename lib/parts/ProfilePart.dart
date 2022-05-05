@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:ontact_family_app/services/shared_service.dart';
 
 class ProfilePart extends StatefulWidget {
   const ProfilePart({Key? key}) : super(key: key);
@@ -77,7 +78,9 @@ class _ProfilePartState extends State<ProfilePart> {
             alignment: Alignment.topRight,
             icon: Icon(Icons.settings),
             iconSize: 25.0,
-            onPressed: (){},
+            onPressed: (){
+              SharedService.logout(context);
+            },
           ),
         ],
       ),

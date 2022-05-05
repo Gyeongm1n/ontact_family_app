@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:ontact_family_app/components/UserDashboard.dart';
+import 'package:ontact_family_app/pages/dashboard_page.dart';
 
 final PageController _pageController = PageController(
   initialPage: 0,
 );
 
-class DashboardPage extends StatelessWidget {
-  const DashboardPage({Key? key}) : super(key: key);
+class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

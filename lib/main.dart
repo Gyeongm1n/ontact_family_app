@@ -1,9 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:ontact_family_app/components/DashboardPage.dart';
-import 'package:ontact_family_app/components/LoginScreen.dart';
-import 'package:ontact_family_app/components/RegisterScreen.dart';
+import 'package:ontact_family_app/pages/home_page.dart';
+import 'package:ontact_family_app/pages/login_page.dart';
+import 'package:ontact_family_app/pages/register_page.dart';
+import 'package:ontact_family_app/services/shared_service.dart';
 
-void main() => runApp(MyApp());
+Widget _defaultHome = const LoginPage();
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  bool _result = await SharedService.isLoggedIn();
+  if (_result) {
+    _defaultHome = const HomePage();
+  }
+
+  runApp(const MyApp());
+}
 
 // 앱에 로그인 정보가 있으면 바로 대시보드, 없으면 로그인 창 (구현 예정)
 class MyApp extends StatelessWidget {
@@ -13,11 +25,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: '/',
       routes: {
-        '/' : (context) => LoginScreen(),
-        '/register' : (context) => RegisterScreen(),
-        '/pages' : (context) => DashboardPage(),
+        '/' : (context) => _defaultHome,
+        '/home' : (context) => const HomePage(),
+        '/login' : (context) => const LoginPage(),
+        '/register' : (context) => const RegisterPage(),
       },
       title: 'Ontact Family App',
       theme: ThemeData(
