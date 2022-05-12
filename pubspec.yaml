@@ -39,6 +39,7 @@ dependencies:
   api_cache_manager: ^1.0.2
   snippet_coder_utils: ^1.0.9
   http: ^0.13.4
+  survey_kit: ^0.0.21
 
 dev_dependencies:
   flutter_test:

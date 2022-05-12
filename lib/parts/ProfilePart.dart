@@ -74,14 +74,14 @@ class _ProfilePartState extends State<ProfilePart> {
               )
             ],
           ),
-          IconButton(
-            alignment: Alignment.topRight,
-            icon: Icon(Icons.settings),
-            iconSize: 25.0,
-            onPressed: (){
-              SharedService.logout(context);
-            },
-          ),
+          // IconButton(
+          //   alignment: Alignment.topRight,
+          //   icon: Icon(Icons.settings),
+          //   iconSize: 25.0,
+          //   onPressed: (){
+          //     SharedService.logout(context);
+          //   },
+          // ),
         ],
       ),
     );

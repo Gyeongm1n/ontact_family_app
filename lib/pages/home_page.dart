@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ontact_family_app/pages/dashboard_page.dart';
+import 'package:ontact_family_app/pages/setting_page.dart';
+import 'package:ontact_family_app/pages/survey_page.dart';
 import 'package:ontact_family_app/pages/write_page.dart';
 
 final PageController _pageController = PageController(
@@ -63,11 +65,7 @@ class _HomePageState extends State<HomePage> {
       ],
     ),
     WritePage(),
-    Text(
-        'survey'
-    ),
-    Text(
-        'setting'
-    ),
+    SurveyPage(),
+    SettingPage(),
   ];
 }
