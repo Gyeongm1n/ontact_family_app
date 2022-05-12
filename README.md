@@ -13,4 +13,8 @@ graduation project
 ### 대시보드
 ![image](https://user-images.githubusercontent.com/63990390/165759174-3c3d1cde-1bab-4f1a-b793-78a160cdf23a.png)
 
+### 글 작성
+![image](https://user-images.githubusercontent.com/63990390/168053030-a2d32243-63fb-4c2b-98b6-7e5da2d8acfa.png)
+
+
 
