@@ -26,7 +26,15 @@ class UserDashboard extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  HeartratePart(),
+                  GestureDetector(
+                    child: HeartratePart(),
+                    onTap: () {
+                      Navigator.pushNamed(
+                        context,
+                        '/heart',
+                      );
+                    },
+                  ),
                   StepPart(),
                 ],
               ),

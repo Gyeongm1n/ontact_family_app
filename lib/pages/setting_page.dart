@@ -27,7 +27,18 @@ class _SettingPageState extends State<SettingPage> {
                   style: ElevatedButton.styleFrom(
                     primary: Colors.grey,
                   )
-                )
+                ),
+                ElevatedButton(
+                    onPressed: () {
+                      SharedService.logout(context);
+                    },
+                    child: Text(
+                        "토큰추가"
+                    ),
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.grey,
+                    )
+                ),
               ],
             ),
           ),

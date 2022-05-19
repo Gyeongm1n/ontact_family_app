@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ontact_family_app/pages/heart_page.dart';
 import 'package:ontact_family_app/pages/home_page.dart';
 import 'package:ontact_family_app/pages/login_page.dart';
 import 'package:ontact_family_app/pages/register_page.dart';
@@ -30,6 +31,7 @@ class MyApp extends StatelessWidget {
         '/home' : (context) => const HomePage(),
         '/login' : (context) => const LoginPage(),
         '/register' : (context) => const RegisterPage(),
+        '/heart': (context) => const HeartPage(),
       },
       title: 'Ontact Family App',
       theme: ThemeData(
