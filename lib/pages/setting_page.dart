@@ -9,6 +9,53 @@ class SettingPage extends StatefulWidget {
 }
 
 class _SettingPageState extends State<SettingPage> {
+  TextEditingController _textFieldController = TextEditingController();
+
+  Future<void> _displayTextInputDialog(BuildContext context) async {
+    return showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: Text('TextField in Dialog'),
+            content: TextField(
+              onChanged: (value) {
+                setState(() {
+                  valueText = value;
+                });
+              },
+              controller: _textFieldController,
+              decoration: InputDecoration(hintText: "Text Field in Dialog"),
+            ),
+            actions: <Widget>[
+              FlatButton(
+                color: Colors.red,
+                textColor: Colors.white,
+                child: Text('CANCEL'),
+                onPressed: () {
+                  setState(() {
+                    Navigator.pop(context);
+                  });
+                },
+              ),
+              FlatButton(
+                color: Colors.green,
+                textColor: Colors.white,
+                child: Text('OK'),
+                onPressed: () {
+                  setState(() {
+                    codeDialog = valueText;
+                    Navigator.pop(context);
+                  });
+                },
+              ),
+            ],
+          );
+        });
+  }
+  String? codeDialog;
+  String? valueText;
+
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -30,7 +77,7 @@ class _SettingPageState extends State<SettingPage> {
                 ),
                 ElevatedButton(
                     onPressed: () {
-                      SharedService.logout(context);
+                      _displayTextInputDialog(context);
                     },
                     child: Text(
                         "토큰추가"
