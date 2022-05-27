@@ -19,7 +19,7 @@ class _SurveyPageState extends State<SurveyPage> {
           color: Colors.white,
           child: Align(
             alignment: Alignment.center,
-            child: FutureBuilder<Task>(
+            child: FutureBuilder<Task?> (
               future: getSampleTask(),
               builder: (context, snapshot) {
                 if (snapshot.connectionState == ConnectionState.done &&
@@ -28,7 +28,7 @@ class _SurveyPageState extends State<SurveyPage> {
                   final task = snapshot.data!;
                   return SurveyKit(
                     onResult: (SurveyResult result) {
-                      print(result.finishReason);
+                      //print(result.results[0].results.first.result);
                       for (int i = 1; i < result.results.length-1; i++) {
                         print(result.results[i].results.first.result.value.toString());
                       }
@@ -161,43 +161,134 @@ class _SurveyPageState extends State<SurveyPage> {
   }
 
   Future<Task> getSampleTask() {
-    var task = OrderedTask(
+    var task = NavigableTask(
       id: TaskIdentifier(),
       steps: [
         InstructionStep(
-          title: 'Welcome to the\nQuickBird Studios\nHealth Survey',
-          text: 'Get ready for a bunch of super random questions!',
-          buttonText: 'Let\'s go!',
+          title: '시작',
+          text: '시작',
+          buttonText: '시작',
         ),
         QuestionStep(
-          title: 'Done?',
-          text: 'We are done, do you mind to tell us more about yourself?',
-          isOptional: true,
+          title: '1번',
+          text: '매사에 흥미나 즐거움이 거의 없다.',
           answerFormat: SingleChoiceAnswerFormat(
             textChoices: [
-              TextChoice(text: '1. ', value: '1'),
-              TextChoice(text: '2. ', value: '2'),
-              TextChoice(text: '3. ', value: '3'),
-              TextChoice(text: '4. ', value: '4'),
+              TextChoice(text: '전혀없음', value: '1'),
+              TextChoice(text: '며칠동안', value: '2'),
+              TextChoice(text: '1주일 이상', value: '3'),
+              TextChoice(text: '거의 매일', value: '4'),
             ],
-            //defaultSelection: TextChoice(text: '1.', value: '1'),
           ),
         ),
+        QuestionStep(
+          title: '2번',
+          text: '기분이 가라앉거나 우울하거나 희망이 없다고 느낀다.',
+          answerFormat: SingleChoiceAnswerFormat(
+            textChoices: [
+              TextChoice(text: '전혀없음', value: '1'),
+              TextChoice(text: '며칠동안', value: '2'),
+              TextChoice(text: '1주일 이상', value: '3'),
+              TextChoice(text: '거의 매일', value: '4'),
+            ],
+          ),
+        ),
+        QuestionStep(
+          title: '3번',
+          text: '잠들기 어렵거나 자주 깬다. 혹은 잠을 너무 많이 잔다.',
+          answerFormat: SingleChoiceAnswerFormat(
+            textChoices: [
+              TextChoice(text: '전혀없음', value: '1'),
+              TextChoice(text: '며칠동안', value: '2'),
+              TextChoice(text: '1주일 이상', value: '3'),
+              TextChoice(text: '거의 매일', value: '4'),
+            ],
+          ),
+        ),
+        QuestionStep(
+          title: '4번',
+          text: '피곤하다고 느끼거나 기운이 거의 없다.',
+          answerFormat: SingleChoiceAnswerFormat(
+            textChoices: [
+              TextChoice(text: '전혀없음', value: '1'),
+              TextChoice(text: '며칠동안', value: '2'),
+              TextChoice(text: '1주일 이상', value: '3'),
+              TextChoice(text: '거의 매일', value: '4'),
+            ],
+          ),
+        ),
+        QuestionStep(
+          title: '5번',
+          text: '식욕이 줄었다. 혹은 너무 많이 먹는다.',
+          answerFormat: SingleChoiceAnswerFormat(
+            textChoices: [
+              TextChoice(text: '전혀없음', value: '1'),
+              TextChoice(text: '며칠동안', value: '2'),
+              TextChoice(text: '1주일 이상', value: '3'),
+              TextChoice(text: '거의 매일', value: '4'),
+            ],
+          ),
+        ),
+        QuestionStep(
+          title: '6번',
+          text: '내 자신이 실패자로 여겨지거나 자신과 가족을 실망시켰다고 느낀다.',
+          answerFormat: SingleChoiceAnswerFormat(
+            textChoices: [
+              TextChoice(text: '전혀없음', value: '1'),
+              TextChoice(text: '며칠동안', value: '2'),
+              TextChoice(text: '1주일 이상', value: '3'),
+              TextChoice(text: '거의 매일', value: '4'),
+            ],
+          ),
+        ),
+        QuestionStep(
+          title: '7번',
+          text: '신문을 읽거나 TV를 보는 것과 같은 일상적인 일에 집중하기 어렵다.',
+          answerFormat: SingleChoiceAnswerFormat(
+            textChoices: [
+              TextChoice(text: '전혀없음', value: '1'),
+              TextChoice(text: '며칠동안', value: '2'),
+              TextChoice(text: '1주일 이상', value: '3'),
+              TextChoice(text: '거의 매일', value: '4'),
+            ],
+          ),
+        ),
+        QuestionStep(
+          title: '8번',
+          text: '다른 사람들이 눈치 첼 정도로 평소보다 말과 행동이 느리다. 혹은 너무 안절부절 못해서 가만히 앉아 있을 수 없다.',
+          answerFormat: SingleChoiceAnswerFormat(
+            textChoices: [
+              TextChoice(text: '전혀없음', value: '1'),
+              TextChoice(text: '며칠동안', value: '2'),
+              TextChoice(text: '1주일 이상', value: '3'),
+              TextChoice(text: '거의 매일', value: '4'),
+            ],
+          ),
+        ),
+        QuestionStep(
+          title: '9번',
+          text: '차라리 죽는 것이 낫겠다고 생각하거나, 어떻게든 자해를 하려고 생각한다.',
+          answerFormat: SingleChoiceAnswerFormat(
+            textChoices: [
+              TextChoice(text: '전혀없음', value: '1'),
+              TextChoice(text: '며칠동안', value: '2'),
+              TextChoice(text: '1주일 이상', value: '3'),
+              TextChoice(text: '거의 매일', value: '4'),
+            ],
+          ),
+        ),
+
         CompletionStep(
           stepIdentifier: StepIdentifier(id: '321'),
-          text: 'Thanks for taking the survey, we will contact you soon!',
-          title: 'Done!',
-          buttonText: 'Submit survey',
+          text: '완료',
+          title: '완료',
+          buttonText: '완료',
         ),
       ],
     );
+
     return Future.value(task);
   }
 
-  Future<Task> getJsonTask() async {
-    final taskJson = await rootBundle.loadString('assets/example_json.json');
-    final taskMap = json.decode(taskJson);
 
-    return Task.fromJson(taskMap);
-  }
 }
