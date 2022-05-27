@@ -18,7 +18,7 @@ class _SurveyPageState extends State<SurveyPage> {
         body: Container(
           color: Colors.white,
           child: Align(
-            alignment: Alignment.center,
+            alignment: Alignment.topCenter,
             child: FutureBuilder<Task?> (
               future: getSampleTask(),
               builder: (context, snapshot) {
@@ -42,7 +42,7 @@ class _SurveyPageState extends State<SurveyPage> {
                     showProgress: true,
                     localizations: {
                       'cancel': 'Cancel',
-                      'next': 'Next',
+                      //'next': 'Next',
                     },
                     themeData: Theme.of(context).copyWith(
                       colorScheme: ColorScheme.fromSwatch(
@@ -59,6 +59,7 @@ class _SurveyPageState extends State<SurveyPage> {
                         ),
                         titleTextStyle: TextStyle(
                           color: Colors.cyan,
+                          //backgroundColor: Colors.blue,
                         ),
                       ),
                       iconTheme: const IconThemeData(
@@ -109,6 +110,7 @@ class _SurveyPageState extends State<SurveyPage> {
                                   .button
                                   ?.copyWith(
                                 color: Colors.cyan,
+                                fontSize: 20.0,
                               );
                             },
                           ),
@@ -119,25 +121,29 @@ class _SurveyPageState extends State<SurveyPage> {
                           textStyle: MaterialStateProperty.all(
                             Theme.of(context).textTheme.button?.copyWith(
                               color: Colors.cyan,
+                              fontSize: 20.0,
                             ),
                           ),
                         ),
                       ),
                       textTheme: TextTheme(
                         headline2: TextStyle(
-                          fontSize: 28.0,
+                          fontSize: 30.0,
                           color: Colors.black,
+                          letterSpacing: 10.0,
+                          fontWeight: FontWeight.bold,
                         ),
                         headline5: TextStyle(
-                          fontSize: 24.0,
+                          fontSize: 15.0,
                           color: Colors.black,
                         ),
                         bodyText2: TextStyle(
-                          fontSize: 18.0,
+                          fontSize: 15.0,
                           color: Colors.black,
+                          fontWeight: FontWeight.bold,
                         ),
                         subtitle1: TextStyle(
-                          fontSize: 18.0,
+                          fontSize: 20.0,
                           color: Colors.black,
                         ),
                       ),
@@ -165,12 +171,12 @@ class _SurveyPageState extends State<SurveyPage> {
       id: TaskIdentifier(),
       steps: [
         InstructionStep(
-          title: '시작',
-          text: '시작',
+          title: '우울증 \n진단 검사',
+          text: '',
           buttonText: '시작',
         ),
         QuestionStep(
-          title: '1번',
+          title: '',
           text: '매사에 흥미나 즐거움이 거의 없다.',
           answerFormat: SingleChoiceAnswerFormat(
             textChoices: [
@@ -182,7 +188,7 @@ class _SurveyPageState extends State<SurveyPage> {
           ),
         ),
         QuestionStep(
-          title: '2번',
+          title: '',
           text: '기분이 가라앉거나 우울하거나 희망이 없다고 느낀다.',
           answerFormat: SingleChoiceAnswerFormat(
             textChoices: [
@@ -194,8 +200,8 @@ class _SurveyPageState extends State<SurveyPage> {
           ),
         ),
         QuestionStep(
-          title: '3번',
-          text: '잠들기 어렵거나 자주 깬다. 혹은 잠을 너무 많이 잔다.',
+          title: '',
+          text: '잠들기 어렵거나 자주 깬다.\n 혹은 잠을 너무 많이 잔다.',
           answerFormat: SingleChoiceAnswerFormat(
             textChoices: [
               TextChoice(text: '전혀없음', value: '1'),
@@ -206,7 +212,7 @@ class _SurveyPageState extends State<SurveyPage> {
           ),
         ),
         QuestionStep(
-          title: '4번',
+          title: '',
           text: '피곤하다고 느끼거나 기운이 거의 없다.',
           answerFormat: SingleChoiceAnswerFormat(
             textChoices: [
@@ -218,7 +224,7 @@ class _SurveyPageState extends State<SurveyPage> {
           ),
         ),
         QuestionStep(
-          title: '5번',
+          title: '',
           text: '식욕이 줄었다. 혹은 너무 많이 먹는다.',
           answerFormat: SingleChoiceAnswerFormat(
             textChoices: [
@@ -230,8 +236,8 @@ class _SurveyPageState extends State<SurveyPage> {
           ),
         ),
         QuestionStep(
-          title: '6번',
-          text: '내 자신이 실패자로 여겨지거나 자신과 가족을 실망시켰다고 느낀다.',
+          title: '',
+          text: '내 자신이 실패자로 여겨지거나\n 자신과 가족을 실망시켰다고 느낀다.',
           answerFormat: SingleChoiceAnswerFormat(
             textChoices: [
               TextChoice(text: '전혀없음', value: '1'),
@@ -242,8 +248,8 @@ class _SurveyPageState extends State<SurveyPage> {
           ),
         ),
         QuestionStep(
-          title: '7번',
-          text: '신문을 읽거나 TV를 보는 것과 같은 일상적인 일에 집중하기 어렵다.',
+          title: '',
+          text: '신문을 읽거나 TV를 보는 것과\n 같은 일상적인 일에 집중하기 어렵다.',
           answerFormat: SingleChoiceAnswerFormat(
             textChoices: [
               TextChoice(text: '전혀없음', value: '1'),
@@ -254,8 +260,8 @@ class _SurveyPageState extends State<SurveyPage> {
           ),
         ),
         QuestionStep(
-          title: '8번',
-          text: '다른 사람들이 눈치 첼 정도로 평소보다 말과 행동이 느리다. 혹은 너무 안절부절 못해서 가만히 앉아 있을 수 없다.',
+          title: '',
+          text: '다른 사람들이 눈치 첼 정도로 평소보다 말과 행동이 느리다.\n 혹은 너무 안절부절 못해서 가만히 앉아 있을 수 없다.',
           answerFormat: SingleChoiceAnswerFormat(
             textChoices: [
               TextChoice(text: '전혀없음', value: '1'),
@@ -266,8 +272,8 @@ class _SurveyPageState extends State<SurveyPage> {
           ),
         ),
         QuestionStep(
-          title: '9번',
-          text: '차라리 죽는 것이 낫겠다고 생각하거나, 어떻게든 자해를 하려고 생각한다.',
+          title: '',
+          text: '차라리 죽는 것이 낫겠다고 생각하거나,\n 어떻게든 자해를 하려고 생각한다.',
           answerFormat: SingleChoiceAnswerFormat(
             textChoices: [
               TextChoice(text: '전혀없음', value: '1'),

@@ -74,11 +74,11 @@ class _LoginPageState extends State<LoginPage> {
                 Align(
                   alignment: Alignment.center,
                   child: Image.asset(
-                    "assets/images/logo.png",
+                    "",
                     width: 250,
                     fit: BoxFit.contain,
                   ),
-                )
+                ),
               ],
             ),
           ),

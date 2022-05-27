@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ontact_family_app/services/shared_service.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class SettingPage extends StatefulWidget {
   const SettingPage({Key? key}) : super(key: key);
@@ -16,7 +17,7 @@ class _SettingPageState extends State<SettingPage> {
         context: context,
         builder: (context) {
           return AlertDialog(
-            title: Text('TextField in Dialog'),
+            title: Text('fitbit토큰을 입력하세요'),
             content: TextField(
               onChanged: (value) {
                 setState(() {
@@ -24,7 +25,7 @@ class _SettingPageState extends State<SettingPage> {
                 });
               },
               controller: _textFieldController,
-              decoration: InputDecoration(hintText: "Text Field in Dialog"),
+              decoration: InputDecoration(hintText: "fitbit토큰 입력"),
             ),
             actions: <Widget>[
               FlatButton(
@@ -44,6 +45,7 @@ class _SettingPageState extends State<SettingPage> {
                 onPressed: () {
                   setState(() {
                     codeDialog = valueText;
+                    if (codeDialog == null) return;
                     Navigator.pop(context);
                   });
                 },
@@ -65,25 +67,63 @@ class _SettingPageState extends State<SettingPage> {
             child: Column(
               children: [
                 ElevatedButton(
-                  onPressed: () {
-                    SharedService.logout(context);
-                  },
-                  child: Text(
-                    "로그아웃"
-                  ),
-                  style: ElevatedButton.styleFrom(
-                    primary: Colors.grey,
-                  )
-                ),
-                ElevatedButton(
                     onPressed: () {
                       _displayTextInputDialog(context);
                     },
                     child: Text(
-                        "토큰추가"
+                      "토큰 추가",
+                      style: TextStyle(
+                        fontSize: 15,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
+                      textAlign: TextAlign.center,
                     ),
                     style: ElevatedButton.styleFrom(
-                      primary: Colors.grey,
+                      fixedSize: Size(200, 50),
+                      primary: Colors.blue,
+                    )
+                ),
+                SizedBox(
+                  height: 15,
+                ),
+                ElevatedButton(
+                    onPressed: () async {
+                      await launchUrl(Uri.parse('https://www.naver.com/'));
+                    },
+                    child: Text(
+                        "토근 발급 도움말",
+                        style: TextStyle(
+                          fontSize: 15,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        textAlign: TextAlign.center,
+                    ),
+                    style: ElevatedButton.styleFrom(
+                      fixedSize: Size(200, 50),
+                      primary: Colors.blue,
+                    )
+                ),
+                SizedBox(
+                  height: 15,
+                ),
+                ElevatedButton(
+                    onPressed: () {
+                      SharedService.logout(context);
+                    },
+                    child: Text(
+                      "로그아웃",
+                      style: TextStyle(
+                        fontSize: 15,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                    style: ElevatedButton.styleFrom(
+                      fixedSize: Size(200, 50),
+                      primary: Colors.blue,
                     )
                 ),
               ],
