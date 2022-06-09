@@ -9,7 +9,7 @@ graduation project
 ![image](https://user-images.githubusercontent.com/63990390/170707218-023d4363-0d03-42c9-aff1-1a997c372d49.png)
 
 ### 대시보드
-![image](https://user-images.githubusercontent.com/63990390/170707419-dfb54343-66f9-49c6-af9f-69739f119e33.png)
+![image](https://user-images.githubusercontent.com/63990390/172875106-8384b590-aa32-4c81-b4c0-96c2d8471514.png)
 
 ### 상태 진단
 ![image](https://user-images.githubusercontent.com/63990390/172873629-9ec6201d-2df1-4f35-9b18-84e769e4d7da.png)
