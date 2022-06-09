@@ -46,36 +46,42 @@ class _CaloriesPartState extends State<CaloriesPart> {
               thickness: 2,
             ),
           ),
-          Positioned(
+          Positioned.fill(
             top: 25,
             left: 0,
             right: 0,
-            child: Container(
-              height: 140,
-              child: SfRadialGauge(axes: <RadialAxis>[
-                RadialAxis(
-                  showFirstLabel: false,
-                  showLabels: false,
-                  showTicks: false,
-                  startAngle: 270,
-                  endAngle: 270,
-                  minimum: 0,
-                  maximum: 2400,
-                  axisLineStyle: AxisLineStyle(thickness: 20),
-                  pointers: [
-                    RangePointer(value: 1700, width: 20,)
-                  ],
-                ),
-              ]),
+            child: Align(
+              alignment: Alignment.center,
+              child: Container(
+                height: 140,
+                child: SfRadialGauge(axes: <RadialAxis>[
+                  RadialAxis(
+                    showFirstLabel: false,
+                    showLabels: false,
+                    showTicks: false,
+                    startAngle: 270,
+                    endAngle: 270,
+                    minimum: 0,
+                    maximum: 2400,
+                    axisLineStyle: AxisLineStyle(thickness: 15),
+                    pointers: [
+                      RangePointer(value: 1700, width: 15,)
+                    ],
+                  ),
+                ]),
+              ),
             ),
           ),
-          Positioned(
-            top: 88,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 40),
-              child: Text(
-                '1740/2400kcal',
-                style: TextStyle(fontSize: 11, fontWeight: FontWeight.bold),
+          Positioned.fill(
+            top: 20,
+            child: Align(
+              alignment: Alignment.center,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 40),
+                child: Text(
+                  '1740/2400kcal',
+                  style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
+                ),
               ),
             ),
           ),

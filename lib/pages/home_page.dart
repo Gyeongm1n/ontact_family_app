@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:ontact_family_app/pages/dashboard_page.dart';
+import 'package:ontact_family_app/pages/post_list_page.dart';
 import 'package:ontact_family_app/pages/setting_page.dart';
-import 'package:ontact_family_app/pages/survey_page.dart';
-import 'package:ontact_family_app/pages/write_page.dart';
+import 'package:ontact_family_app/pages/survey_result_page.dart';
 
 final PageController _pageController = PageController(
   initialPage: 0,
@@ -36,19 +36,19 @@ class _HomePageState extends State<HomePage> {
         },
         items: [
           BottomNavigationBarItem(
-              label: 'Home',
+              label: '홈',
               icon: Icon(Icons.home)
           ),
           BottomNavigationBarItem(
-              label: 'write',
-              icon: Icon(Icons.list_alt)
-          ),
-          BottomNavigationBarItem(
-              label: 'survey',
+              label: '진단',
               icon: Icon(Icons.check_circle_outline)
           ),
           BottomNavigationBarItem(
-              label: 'setting',
+              label: '노트',
+              icon: Icon(Icons.sticky_note_2_outlined)
+          ),
+          BottomNavigationBarItem(
+              label: '설정',
               icon: Icon(Icons.settings)
           ),
         ],
@@ -64,8 +64,8 @@ class _HomePageState extends State<HomePage> {
         UserDashboard(),
       ],
     ),
-    WritePage(),
-    SurveyPage(),
+    SurveyResultPage(),
+    PostListPage(),
     SettingPage(),
   ];
 }

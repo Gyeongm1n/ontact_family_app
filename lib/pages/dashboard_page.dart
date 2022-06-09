@@ -52,13 +52,6 @@ class UserDashboard extends StatelessWidget {
                 height: 10,
               ),
               SleepPart(),
-              Container(
-                height: 200,
-                margin: EdgeInsets.only(bottom: 10),
-                decoration: BoxDecoration(
-                  //color: Colors.grey,
-                ),
-              ),
             ],
           ),
         ),

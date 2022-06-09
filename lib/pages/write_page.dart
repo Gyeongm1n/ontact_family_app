@@ -48,7 +48,7 @@ class _WritePageState extends State<WritePage> {
               padding: const EdgeInsets.only(
                 left: 20,
                 bottom: 10,
-                top: 30,
+                top: 5,
               ),
               child: Text(
                 "제목",
@@ -121,23 +121,37 @@ class _WritePageState extends State<WritePage> {
             SizedBox(
               height: 20,
             ),
-            Center(
-              child: FormHelper.submitButton(
-                "입력",
-                    () {
-                  if (validateAndSave()) {
-                    print('입력');
-                    setState(() {
-                      //isAPIcallProcess = true;
-                    });
-                  }
-                },
-                btnColor: Colors.grey,
-                borderColor: Colors.white,
-                txtColor: Colors.black,
-                borderRadius: 10,
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                FormHelper.submitButton(
+                  "취소",
+                      () {
+                    Navigator.pop(context);
+                  },
+                  btnColor: Colors.red,
+                  borderColor: Colors.white,
+                  txtColor: Colors.black,
+                  borderRadius: 10,
+                ),
+                FormHelper.submitButton(
+                  "입력",
+                      () {
+                    if (validateAndSave()) {
+                      print('입력');
+                      setState(() {
+                        //isAPIcallProcess = true;
+                      });
+                    }
+                  },
+                  btnColor: Colors.green,
+                  borderColor: Colors.white,
+                  txtColor: Colors.black,
+                  borderRadius: 10,
+                ),
+              ],
             ),
+
           ],
         ),
       ),

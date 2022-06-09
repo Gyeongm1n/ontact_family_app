@@ -32,11 +32,7 @@ class _SurveyPageState extends State<SurveyPage> {
                       for (int i = 1; i < result.results.length-1; i++) {
                         print(result.results[i].results.first.result.value.toString());
                       }
-                      Navigator.pushNamedAndRemoveUntil(
-                        context,
-                        '/home',
-                            (route) => false,
-                      );
+                      Navigator.pop(context);
                     },
                     task: task,
                     showProgress: true,
@@ -171,119 +167,88 @@ class _SurveyPageState extends State<SurveyPage> {
       id: TaskIdentifier(),
       steps: [
         InstructionStep(
-          title: '우울증 \n진단 검사',
+          title: '진단 검사',
           text: '',
           buttonText: '시작',
         ),
         QuestionStep(
           title: '',
-          text: '매사에 흥미나 즐거움이 거의 없다.',
+          text: '1. 우울감',
           answerFormat: SingleChoiceAnswerFormat(
             textChoices: [
-              TextChoice(text: '전혀없음', value: '1'),
-              TextChoice(text: '며칠동안', value: '2'),
-              TextChoice(text: '1주일 이상', value: '3'),
-              TextChoice(text: '거의 매일', value: '4'),
+              TextChoice(text: '문제없음', value: '1'),
+              TextChoice(text: '조금', value: '2'),
+              TextChoice(text: '보통', value: '3'),
+              TextChoice(text: '많이', value: '4'),
+              TextChoice(text: '문제심각', value: '5'),
             ],
           ),
         ),
         QuestionStep(
           title: '',
-          text: '기분이 가라앉거나 우울하거나 희망이 없다고 느낀다.',
+          text: '2. 불안감',
           answerFormat: SingleChoiceAnswerFormat(
             textChoices: [
-              TextChoice(text: '전혀없음', value: '1'),
-              TextChoice(text: '며칠동안', value: '2'),
-              TextChoice(text: '1주일 이상', value: '3'),
-              TextChoice(text: '거의 매일', value: '4'),
+              TextChoice(text: '문제없음', value: '1'),
+              TextChoice(text: '조금', value: '2'),
+              TextChoice(text: '보통', value: '3'),
+              TextChoice(text: '많이', value: '4'),
+              TextChoice(text: '문제심각', value: '5'),
             ],
           ),
         ),
         QuestionStep(
           title: '',
-          text: '잠들기 어렵거나 자주 깬다.\n 혹은 잠을 너무 많이 잔다.',
+          text: '3. 외로움',
           answerFormat: SingleChoiceAnswerFormat(
             textChoices: [
-              TextChoice(text: '전혀없음', value: '1'),
-              TextChoice(text: '며칠동안', value: '2'),
-              TextChoice(text: '1주일 이상', value: '3'),
-              TextChoice(text: '거의 매일', value: '4'),
+              TextChoice(text: '문제없음', value: '1'),
+              TextChoice(text: '조금', value: '2'),
+              TextChoice(text: '보통', value: '3'),
+              TextChoice(text: '많이', value: '4'),
+              TextChoice(text: '문제심각', value: '5'),
             ],
           ),
         ),
         QuestionStep(
           title: '',
-          text: '피곤하다고 느끼거나 기운이 거의 없다.',
+          text: '4. 활동 어려움',
           answerFormat: SingleChoiceAnswerFormat(
             textChoices: [
-              TextChoice(text: '전혀없음', value: '1'),
-              TextChoice(text: '며칠동안', value: '2'),
-              TextChoice(text: '1주일 이상', value: '3'),
-              TextChoice(text: '거의 매일', value: '4'),
+              TextChoice(text: '문제없음', value: '1'),
+              TextChoice(text: '조금', value: '2'),
+              TextChoice(text: '보통', value: '3'),
+              TextChoice(text: '많이', value: '4'),
+              TextChoice(text: '문제심각', value: '5'),
             ],
           ),
         ),
         QuestionStep(
           title: '',
-          text: '식욕이 줄었다. 혹은 너무 많이 먹는다.',
+          text: '5. 식사 어려움',
           answerFormat: SingleChoiceAnswerFormat(
             textChoices: [
-              TextChoice(text: '전혀없음', value: '1'),
-              TextChoice(text: '며칠동안', value: '2'),
-              TextChoice(text: '1주일 이상', value: '3'),
-              TextChoice(text: '거의 매일', value: '4'),
+              TextChoice(text: '문제없음', value: '1'),
+              TextChoice(text: '조금', value: '2'),
+              TextChoice(text: '보통', value: '3'),
+              TextChoice(text: '많이', value: '4'),
+              TextChoice(text: '문제심각', value: '5'),
             ],
           ),
         ),
         QuestionStep(
           title: '',
-          text: '내 자신이 실패자로 여겨지거나\n 자신과 가족을 실망시켰다고 느낀다.',
+          text: '6. 수면 어려움',
           answerFormat: SingleChoiceAnswerFormat(
             textChoices: [
-              TextChoice(text: '전혀없음', value: '1'),
-              TextChoice(text: '며칠동안', value: '2'),
-              TextChoice(text: '1주일 이상', value: '3'),
-              TextChoice(text: '거의 매일', value: '4'),
+              TextChoice(text: '문제없음', value: '1'),
+              TextChoice(text: '조금', value: '2'),
+              TextChoice(text: '보통', value: '3'),
+              TextChoice(text: '많이', value: '4'),
+              TextChoice(text: '문제심각', value: '5'),
             ],
           ),
         ),
-        QuestionStep(
-          title: '',
-          text: '신문을 읽거나 TV를 보는 것과\n 같은 일상적인 일에 집중하기 어렵다.',
-          answerFormat: SingleChoiceAnswerFormat(
-            textChoices: [
-              TextChoice(text: '전혀없음', value: '1'),
-              TextChoice(text: '며칠동안', value: '2'),
-              TextChoice(text: '1주일 이상', value: '3'),
-              TextChoice(text: '거의 매일', value: '4'),
-            ],
-          ),
-        ),
-        QuestionStep(
-          title: '',
-          text: '다른 사람들이 눈치 첼 정도로 평소보다 말과 행동이 느리다.\n 혹은 너무 안절부절 못해서 가만히 앉아 있을 수 없다.',
-          answerFormat: SingleChoiceAnswerFormat(
-            textChoices: [
-              TextChoice(text: '전혀없음', value: '1'),
-              TextChoice(text: '며칠동안', value: '2'),
-              TextChoice(text: '1주일 이상', value: '3'),
-              TextChoice(text: '거의 매일', value: '4'),
-            ],
-          ),
-        ),
-        QuestionStep(
-          title: '',
-          text: '차라리 죽는 것이 낫겠다고 생각하거나,\n 어떻게든 자해를 하려고 생각한다.',
-          answerFormat: SingleChoiceAnswerFormat(
-            textChoices: [
-              TextChoice(text: '전혀없음', value: '1'),
-              TextChoice(text: '며칠동안', value: '2'),
-              TextChoice(text: '1주일 이상', value: '3'),
-              TextChoice(text: '거의 매일', value: '4'),
-            ],
-          ),
-        ),
-
         CompletionStep(
           stepIdentifier: StepIdentifier(id: '321'),
           text: '완료',

@@ -10,21 +10,13 @@ class HeartPage extends StatefulWidget {
 
 class _HeartPageState extends State<HeartPage> {
   final List<ChartData> chartData = [
-    ChartData(1, 35),
-    ChartData(2, 28),
-    ChartData(3, 34),
-    ChartData(4, 32),
-    ChartData(5, 40),
-    ChartData(6, 35),
-    ChartData(7, 28),
-    ChartData(8, 34),
-    ChartData(9, 32),
-    ChartData(11, 40),
-    ChartData(12, 35),
-    ChartData(13, 28),
-    ChartData(14, 34),
-    ChartData(15, 32),
-    ChartData(16, 40),
+    ChartData(1, 60),
+    ChartData(2, 67),
+    ChartData(3, 73),
+    ChartData(4, 61),
+    ChartData(5, 103),
+    ChartData(6, 70),
+    ChartData(7, 82),
   ];
 
   @override
@@ -36,13 +28,19 @@ class _HeartPageState extends State<HeartPage> {
           child: Container(
             child: SfCartesianChart(
                 backgroundColor: Colors.white,
+                primaryYAxis: NumericAxis(
+                  interval: 10,
+                ),
+                primaryXAxis: NumericAxis(
+                  interval: 1,
+                ),
                 series: <ChartSeries>[
                   // Renders line chart
-                  FastLineSeries<ChartData, int>(
+                  LineSeries<ChartData, int>(
                     dataSource: chartData,
                     xValueMapper: (ChartData data, _) => data.x,
                     yValueMapper: (ChartData data, _) => data.y,
-
+                    markerSettings: MarkerSettings(isVisible: true),
                   )
                 ]
             ),

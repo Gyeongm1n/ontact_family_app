@@ -3,6 +3,8 @@ import 'package:ontact_family_app/pages/heart_page.dart';
 import 'package:ontact_family_app/pages/home_page.dart';
 import 'package:ontact_family_app/pages/login_page.dart';
 import 'package:ontact_family_app/pages/register_page.dart';
+import 'package:ontact_family_app/pages/survey_page.dart';
+import 'package:ontact_family_app/pages/write_page.dart';
 import 'package:ontact_family_app/services/shared_service.dart';
 
 Widget _defaultHome = const LoginPage();
@@ -32,6 +34,8 @@ class MyApp extends StatelessWidget {
         '/login' : (context) => const LoginPage(),
         '/register' : (context) => const RegisterPage(),
         '/heart': (context) => const HeartPage(),
+        '/write': (context) => const WritePage(),
+        '/survey': (context) => SurveyPage(),
       },
       title: 'Ontact Family App',
       theme: ThemeData(
