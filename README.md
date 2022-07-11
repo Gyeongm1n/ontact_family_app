@@ -7,6 +7,8 @@ graduation project
 ### 회원가입 & 로그인
 ![image](https://user-images.githubusercontent.com/63990390/170707126-7f1f41c3-ae95-4657-9ffb-aef9edc59d2f.png)
 ![image](https://user-images.githubusercontent.com/63990390/170707218-023d4363-0d03-42c9-aff1-1a997c372d49.png)
+<img width="244" alt="register" src="https://user-images.githubusercontent.com/62698626/178191712-fed5bbe8-c579-42d8-83e0-31664b843c56.png">
+
 
 ### 대시보드
 ![image](https://user-images.githubusercontent.com/63990390/172875185-02735f07-271a-40f3-92a2-759a93090b3b.png)
@@ -22,6 +24,7 @@ graduation project
 
 ### 설정
 ![image](https://user-images.githubusercontent.com/63990390/170707633-9aaadc48-7151-4f1e-8948-979c4f5e609f.png)
+
 
 
 
